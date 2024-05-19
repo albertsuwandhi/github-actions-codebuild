@@ -1,5 +1,10 @@
 name: Hello World
-on: [push]
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
 jobs:
   Hello-World-Job:
     runs-on: codebuild-github-actions-runner-${{ github.run_id }}-${{ github.run_attempt }}
